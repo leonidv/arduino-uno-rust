@@ -1,0 +1,40 @@
+[package]
+name = "running-bar"
+version = "0.1.0"
+authors = ["Leonid Vygovskiy <leonid.vygovskiy@gmail.com>"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+
+[[bin]]
+name = "running-bar"
+test = false
+bench = false
+
+[dependencies]
+panic-halt = "0.2.0"
+ufmt = "0.1.0"
+nb = "0.1.2"
+embedded-hal = "0.2.3"
+
+[dependencies.arduino-hal]
+git = "https://github.com/rahix/avr-hal"
+rev = "5d757696e338104622a0f89c51020b718bf48b62"
+features = ["arduino-uno"]
+
+[dependencies.avr-device]
+version = "0.3.2"
+features=["atmega328p"]
+
+
+# Configure the build for minimal size - AVRs have very little program memory
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
