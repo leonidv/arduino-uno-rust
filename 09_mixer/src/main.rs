@@ -15,9 +15,9 @@ fn main() -> ! {
     tc1.tccr1a.write(|w| w.wgm1().bits(0b01).com1a().match_clear());
     tc1.tccr1b.write(|w| w.wgm1().bits(0b01).cs1().prescale_64());
 
-    let mut left_button_pin = pins.d5.into_pull_up_input();
+    let mut left_button_pin = pins.d7.into_pull_up_input();
     let mut middle_button_pin = pins.d6.into_pull_up_input();
-    let mut right_button_pin = pins.d7.into_pull_up_input();
+    let mut right_button_pin = pins.d5.into_pull_up_input();
 
     let mut motor_speed = 0;
     loop {
@@ -35,8 +35,6 @@ fn main() -> ! {
                 // no any button is pressed, use previous value
                 motor_speed
             };
-
-        
         tc1.ocr1a.write(|w| unsafe { w.bits(motor_speed) });
     }
 }
