@@ -21,7 +21,7 @@ fn main() -> ! {
         }
         btn_was_pressed = btn_is_pressed;
         // Optional. Adds a more little stability on extreme cases like as
-        // very-very fast pressing on the button using your nail10 
+        // very-very fast pressing on the button using your nail
         delay_ms(10);
     }
 }

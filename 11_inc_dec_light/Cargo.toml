@@ -1,12 +1,12 @@
 [package]
-name = "blink-fade"
+name = "incdec-light"
 version = "0.1.0"
 authors = ["Leonid Vygovskiy <leonid.vygovskiy@gmail.com>"]
-edition = "2018"
+edition = "2021"
 license = "MIT OR Apache-2.0"
 
 [[bin]]
-name = "blink-fade"
+name = "incdec-light"
 test = false
 bench = false
 
@@ -21,6 +21,10 @@ git = "https://github.com/rahix/avr-hal"
 rev = "d0d2f243bd3e10b49f6a78d44839a6caa8be7d43"
 features = ["arduino-uno"]
 
+[dependencies.avr-device]
+version = "0.3.3"
+
+
 # Configure the build for minimal size - AVRs have very little program memory
 [profile.dev]
 panic = "abort"
@@ -33,3 +37,6 @@ codegen-units = 1
 debug = true
 lto = true
 opt-level = "s"
+
+[target.'cfg(target_arch = "avr")']
+runner = "ravedude uno -P /dev/ttyUSB0 --open-console --baudrate 57600"

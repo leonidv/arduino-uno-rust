@@ -21,7 +21,8 @@ fn main() -> ! {
         delay_ms(250);
         tc1.ocr1a.write(|w| unsafe { w.bits(170) }); // 3.33V
         delay_ms(250);
-        tc1.ocr1a.write(|w| unsafe { w.bits(255) }) // 5V
+        tc1.ocr1a.write(|w| unsafe { w.bits(255) }); // 5V
+        delay_ms(250);
     }
 }
 

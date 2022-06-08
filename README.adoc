@@ -1,0 +1,66 @@
+== Arduino and Rust examples
+This repository contains implementation of classical Arduino examples in Rust language. 
+
+Original source  of examples is http://wiki.amperka.ru/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82-arduino#%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D1%8B[Amperka wiki]. Amperka is Russian's store of starting Arduino kits and extensions.
+
+## Examples description
+
+[cols="1,2,2a,2a"]
+|===
+| Example  | Description | AVR (or Rust) techniques | Arduino functions 
+
+| 01_blink 
+| Blinking led - Hello world in the Arduino.  
+| * Toggle led 
+  * delay milliseconds 
+|  * delay
+   * digitalWrite
+
+
+| 02_blink_fade 
+| Led with different brightness 
+| Fast PWM mode 
+| * analogWrite
+
+| 03_pot_light 
+| LED with controlled by pot brightness
+| ADC, using pot
+| * analogRead
+
+| 05_night_light
+| LED on/off controlled by pot and photoconductive cell
+| ADC, using pot and photoconductive
+| * analogRead
+
+| 06_pulsar_bar
+| Smoothly change brighntess of LED ABr
+| Timer interrupts, using atomic variables
+| * analogWrite
+  * millis
+
+
+| 07_running_bar
+| Sequentially on/off leds in a bar
+| AVR-Rust specific - use pins in array.
+| * digitalWrite
+
+| 09_mixer
+| Changes speed of motor by buttons
+| pull-up pins
+| * pinMode PULLUP
+  * digitalRead
+  * digitalWrite
+
+| 10_led_toggle
+| On/off led by button
+| Nothing new compare to 09_mixer
+| 
+
+| 11_inc_dec_light
+| Change brightness of led with 2 buttons
+| External Interrupts (INT0, INT1) 
+  
+Issue with Fast PWM
+| * attachInterrupt
+
+|===
