@@ -1,5 +1,5 @@
 == Arduino and Rust examples
-This repository contains implementation of classical Arduino examples in Rust language. 
+This repository contains implementation of classical Arduino examples in Rust language using https://github.com/Rahix/avr-hal[avr-hal]
 
 Original source  of examples is http://wiki.amperka.ru/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82-arduino#%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D1%8B[Amperka wiki]. Amperka is Russian's store of starting Arduino kits and extensions.
 
@@ -62,5 +62,11 @@ Original source  of examples is http://wiki.amperka.ru/%D0%BA%D0%BE%D0%BD%D1%81%
   
 Issue with Fast PWM
 | * attachInterrupt
+
+| 13_seven_segment_counter
+| Change digit from 0 to 9 per seconds on 7 segments counter.
+| struct as indicator's model
+|
+
 
 |===
