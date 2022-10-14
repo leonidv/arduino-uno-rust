@@ -1,0 +1,21 @@
+<circuit type="simulide_1.0" rev="1007" stepSize="1000000" stepsPS="1000000" NLsteps="100000" animate="0" >
+
+<item itemtype="AudioOut" CircId="AudioOut-8" mainComp="false" Show_id="false" Show_Val="false" Pos="84,340" rotation="0" hflip="1" vflip="1" label="AudioOut-8" idLabPos="-20,-36" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Subcircuit" CircId="Uno-9" mainComp="false" Show_id="true" Show_Val="false" Pos="-112,252" rotation="0" hflip="1" vflip="1" label="Uno-9" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps itemtype="MCU" CircId="9_mega328-109" mainComp="true" Show_id="false" Show_Val="false" Pos="20,20" rotation="0" hflip="1" vflip="1" label="9_mega328-109" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../../../../home/leonidv/Documents/programming/arduino/amperka/04_buzzer/target/avr-atmega328p/debug/buzzer.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="true" Wdt_enabled="false" />
+</item>
+
+<item itemtype="FreqMeter" CircId="FreqMeter-24" mainComp="false" Show_id="false" Show_Val="false" Pos="124,280" rotation="0" hflip="1" vflip="1" label="FreqMeter-24" idLabPos="-32,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Filter="0.1 V" />
+
+<item itemtype="Node" CircId="Node-26" mainComp="false" Pos="68,280" />
+
+<item itemtype="Connector" uid="Connector-20" startpinid="AudioOut-8-rPin" endpinid="Uno-9-GND1" pointList="68,340,40,340" />
+
+<item itemtype="Connector" uid="Connector-10" startpinid="Uno-9-9" endpinid="Node-26-0" pointList="-104,348,-136,348,-136,228,68,228,68,280" />
+
+<item itemtype="Connector" uid="Connector-25" startpinid="FreqMeter-24-lPin" endpinid="Node-26-1" pointList="84,280,68,280" />
+
+<item itemtype="Connector" uid="Connector-27" startpinid="Node-26-2" endpinid="AudioOut-8-lPin" pointList="68,280,68,332" />
+
+</circuit>

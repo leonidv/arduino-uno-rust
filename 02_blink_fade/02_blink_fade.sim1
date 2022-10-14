@@ -1,0 +1,31 @@
+<circuit type="simulide_1.0" rev="1007" stepSize="1000000" stepsPS="500000" NLsteps="100000" animate="0" >
+
+<item itemtype="Subcircuit" CircId="Uno-2" mainComp="false" Show_id="true" Show_Val="false" Pos="400,444" rotation="360" hflip="1" vflip="1" label="Uno-2" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps itemtype="MCU" CircId="2_mega328-109" mainComp="true" Show_id="false" Show_Val="false" Pos="20,20" rotation="0" hflip="1" vflip="1" label="2_mega328-109" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="target/avr-atmega328p/release/blink-fade.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="true" Wdt_enabled="false" />
+</item>
+
+<item itemtype="Resistor" CircId="Resistor-5" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="628,464" rotation="0" hflip="1" vflip="1" label="Resistor-5" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="220 Ω" />
+
+<item itemtype="Led" CircId="Led-7" mainComp="false" Show_id="false" Show_Val="false" Pos="668,492" rotation="90" hflip="1" vflip="1" label="Led-7" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="10 mA" Resistance="0.6 Ω" />
+
+<item itemtype="Oscope" CircId="Oscope-10" mainComp="false" ShowProp="Basic_X" Show_id="false" Show_Val="true" Pos="788,460" rotation="0" hflip="1" vflip="1" label="Oscope-10" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="200 Pixels" Basic_Y="135 Pixels" TimDiv="250000000" TimPos="221971208,0,0,0," VolDiv="1,1,1,1," Tunnels=",,,," Trigger="0" Filter="0.1 V" Trigger="0" AutoSC="4" Tracks="1" HideCh="false,true,true,true," VolPos="-1.63,-1.63,-1.63,-1.63," />
+
+<item itemtype="Node" CircId="Node-11" mainComp="false" Pos="580,412" />
+
+<item itemtype="Node" CircId="Node-23" mainComp="false" Pos="700,524" />
+
+<item itemtype="Connector" uid="connector-24" startpinid="Uno-2-9" endpinid="Node-11-0" pointList="408,540,380,540,380,412,580,412" />
+
+<item itemtype="Connector" uid="connector-25" startpinid="Node-11-2" endpinid="Resistor-5-lPin" pointList="580,412,580,464,612,464" />
+
+<item itemtype="Connector" uid="connector-26" startpinid="Node-11-1" endpinid="Oscope-10-Pin0" pointList="580,412,700,412" />
+
+<item itemtype="Connector" uid="connector-27" startpinid="Node-23-2" endpinid="Uno-2-GND0" pointList="700,524,552,524" />
+
+<item itemtype="Connector" uid="connector-28" startpinid="Led-7-rPin" endpinid="Node-23-0" pointList="668,508,668,524,700,524" />
+
+<item itemtype="Connector" uid="connector-29" startpinid="Node-23-1" endpinid="Oscope-10-PinG" pointList="700,524,700,524" />
+
+<item itemtype="Connector" uid="connector-30" startpinid="Resistor-5-rPin" endpinid="Led-7-lPin" pointList="644,464,668,464,668,476" />
+
+</circuit>

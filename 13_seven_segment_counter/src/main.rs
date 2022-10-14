@@ -19,8 +19,6 @@ fn main() -> ! {
     let pins = arduino_hal::pins!(dp);
     pins.d13.into_output().set_low();
 
-    let x : Option<u8> = Option::None;
-
     let mut indicator = Indicator {
         a: pins.d7.downgrade().into_output(),
         b: pins.d6.downgrade().into_output(),

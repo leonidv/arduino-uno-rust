@@ -1,7 +1,20 @@
 == Arduino and Rust examples
 This repository contains implementation of classical Arduino examples in Rust language using https://github.com/Rahix/avr-hal[avr-hal]
 
-Original source  of examples is http://wiki.amperka.ru/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82-arduino#%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D1%8B[Amperka wiki]. Amperka is Russian's store of starting Arduino kits and extensions.
+This repository based on tutorials from http://wiki.amperka.ru/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82-arduino#%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D1%8B[Amperka wiki]. Amperka is Russian's store which sells Arduino kits and extensions. But there is not full implementation of all examples and I changed some of them. I suppose that some examples is too simple or don't give new experience compare to previous.
+
+## SimulIDE Projects
+
+Some projects contains https://www.simulide.com/p/home.html[SimulIDE] project (*.sim1). It allow to run example without making a physical schemes. 
+
+How to run a project in SimulIDE:
+
+. Use script ``build-to-hex.sh <example_folder>``, for ex: ``build-to-hex.sh 01_blink``. Script writes the path to result HEX file.
+. Open project in SimulIDE
+. Right click on Arduino 
+. Click "Load firmware" and select <buildname.hex>
+
+**Warning!** Some projects has simulated in slower mode. For example `02_blink_fade` executed on 50% of real speed. I did it for more clarity.
 
 ## Examples description
 
@@ -27,13 +40,21 @@ Original source  of examples is http://wiki.amperka.ru/%D0%BA%D0%BE%D0%BD%D1%81%
 | ADC, using pot
 | * analogRead
 
+| 04_buzzer
+| Buzzer plays musical notes
+| Timer: 
+
+  * compare match mode
+  * toggle pin d9
+| * tone
+
 | 05_night_light
 | LED on/off controlled by pot and photoconductive cell
 | ADC, using pot and photoconductive
 | * analogRead
 
 | 06_pulsar_bar
-| Smoothly change brighntess of LED ABr
+| Smoothly change brighntess of LED bar
 | Timer interrupts, using atomic variables
 | * analogWrite
   * millis

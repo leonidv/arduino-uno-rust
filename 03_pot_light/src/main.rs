@@ -9,9 +9,9 @@ fn main() -> ! {
     let pins = arduino_hal::pins!(dp);
 
     let mut adc = arduino_hal::Adc::new(dp.ADC, Default::default());
-    let mut pot_pin = pins.a0.into_analog_input(&mut adc);
+    let pot_pin = pins.a0.into_analog_input(&mut adc);
 
-    let mut led_pin = pins.d9.into_output();
+    pins.d9.into_output();
 
     let tc1 = dp.TC1;
     tc1.tccr1a.write(|w| w.wgm1().bits(0b01).com1a().match_clear());
