@@ -1,20 +1,39 @@
-== Arduino and Rust examples
+= Arduino and Rust examples
+:toc:
+
+## About repository
 This repository contains implementation of classical Arduino examples in Rust language using https://github.com/Rahix/avr-hal[avr-hal]
 
 This repository based on tutorials from http://wiki.amperka.ru/%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82-arduino#%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D1%8B[Amperka wiki]. Amperka is Russian's store which sells Arduino kits and extensions. But there is not full implementation of all examples and I changed some of them. I suppose that some examples is too simple or don't give new experience compare to previous.
 
+## How to run on a board
+
+WARNING: I have tested this code only on Linux (Archlinux). It should work on Windows, but you should modify `.cargo/config.toml` (see the instruction in the file). After this you should be generate HEX files manually.
+
+. Plug your Arduino UNO into your PC
+. Set enviroment variable this tty of your board. In my setup is usually `/dev/ttyUSB0`:
+bash:: ``RAVEDUDE_PORT=/dev/ttyUSB0``
+fish:: `set -x RAVEDUDE_PORT /dev/ttyUSB0`
+. Run cargo `cargo run --bin <EXAMLPLE_NAME>`,
+  for example: `cargo run --bin 01_blink` **Hint:** 
+
+TIP: https://fishshell.com/[fish shell] autocompletes examples names.
+
+`cargo run` also generates HEX files, which can be loaded into SimulIDE.
+
 ## SimulIDE Projects
 
-Some projects contains https://www.simulide.com/p/home.html[SimulIDE] project (*.sim1). It allow to run example without making a physical schemes. 
+Some projects contains https://www.simulide.com/p/home.html[SimulIDE] project (*.sim1) in the folder `simulide`. SimulIDE is a simple real time electronic circuit simulator, intended for hobbyist or students to learn and experiment with simple electronic circuits and microcontrollers, supporting PIC, AVR and Arduino. You can download version for free, if set price to $0.
+
+WARNING: Please, use stable version! Examples have been checked on 0.4.15-SR10
 
 How to run a project in SimulIDE:
 
-. Use script ``build-to-hex.sh <example_folder>``, for ex: ``build-to-hex.sh 01_blink``. Script writes the path to result HEX file.
 . Open project in SimulIDE
 . Right click on Arduino 
-. Click "Load firmware" and select <buildname.hex>
+. Click "Load firmware" and select <buildname.hex>, which you can find in the folder ``target/avr-atmega328p/debug``
 
-**Warning!** Some projects has simulated in slower mode. For example `02_blink_fade` executed on 50% of real speed. I did it for more clarity.
+CAUTION: Some projects has simulated in slower mode. I did it for more clarity.
 
 ## Examples description
 
@@ -34,6 +53,7 @@ How to run a project in SimulIDE:
 | Led with different brightness 
 | Fast PWM mode 
 | * analogWrite
+
 
 | 03_pot_light 
 | LED with controlled by pot brightness
@@ -89,5 +109,6 @@ Issue with Fast PWM
 | struct as indicator's model
 |
 
+| 14_shift_register.rs
 
 |===

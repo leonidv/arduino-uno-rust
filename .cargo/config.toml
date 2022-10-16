@@ -1,0 +1,12 @@
+[build]
+target = "avr-specs/avr-atmega328p.json"
+
+[target.'cfg(target_arch = "avr")']
+runner = "./after-build.sh" # If you use Windows  comment this line
+# runner = "ravedude uno -cb 57600" If you use Windows uncomment this line
+
+[unstable]
+build-std = ["core"]
+
+[target.'cfg(target_arch = "arm")']
+runner = "ravedude uno -cb 57600 #"
