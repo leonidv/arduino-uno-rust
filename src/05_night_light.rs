@@ -11,8 +11,8 @@ fn main() -> ! {
 
 
     let mut adc = arduino_hal::Adc::new(dp.ADC, Default::default());
-    let mut pot_pin = pins.a1.into_analog_input(&mut adc);
-    let mut ldr_pin = pins.a0.into_analog_input(&mut adc);
+    let pot_pin = pins.a1.into_analog_input(&mut adc);
+    let ldr_pin = pins.a0.into_analog_input(&mut adc);
 
     let mut led = pins.d13.into_output();
 
@@ -22,9 +22,9 @@ fn main() -> ! {
 
         ufmt::uwriteln!(&mut serial, "lightness = {}, threshold = {}", lightness, threshold);
 
-        let tooDark = (lightness < threshold);
+        let too_dark = (lightness < threshold);
 
-        if tooDark {
+        if too_dark {
             led.set_high();
         } else {
             led.set_low();

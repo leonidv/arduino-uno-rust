@@ -1,14 +1,16 @@
-<circuit type="simulide_1.0" rev="1007" stepSize="1000000" stepsPS="500000" NLsteps="100000" animate="0" >
+<circuit version="trunk" rev="1365" stepSize="1000000" stepsPS="500000" NLsteps="100000" reaStep="1000000" animate="0" >
 
 <item itemtype="Subcircuit" CircId="Uno-2" mainComp="false" Show_id="true" Show_Val="false" Pos="400,444" rotation="360" hflip="1" vflip="1" label="Uno-2" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
-<mainCompProps itemtype="MCU" CircId="2_mega328-109" mainComp="true" Show_id="false" Show_Val="false" Pos="20,20" rotation="0" hflip="1" vflip="1" label="2_mega328-109" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="target/avr-atmega328p/release/blink-fade.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="true" Wdt_enabled="false" />
+<mainCompProps itemtype="MCU" CircId="2_mega328-109" mainComp="true" Show_id="false" Show_Val="false" Pos="20,20" rotation="0" hflip="1" vflip="1" label="2_mega328-109" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../target/avr-atmega328p/debug/02_blink_fade.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="true" Wdt_enabled="false" SerialMon="-1" />
 </item>
 
 <item itemtype="Resistor" CircId="Resistor-5" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="628,464" rotation="0" hflip="1" vflip="1" label="Resistor-5" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="220 Ω" />
 
 <item itemtype="Led" CircId="Led-7" mainComp="false" Show_id="false" Show_Val="false" Pos="668,492" rotation="90" hflip="1" vflip="1" label="Led-7" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="10 mA" Resistance="0.6 Ω" />
 
-<item itemtype="Oscope" CircId="Oscope-10" mainComp="false" ShowProp="Basic_X" Show_id="false" Show_Val="true" Pos="788,460" rotation="0" hflip="1" vflip="1" label="Oscope-10" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="200 Pixels" Basic_Y="135 Pixels" TimDiv="250000000" TimPos="221971208,0,0,0," VolDiv="1,1,1,1," Tunnels=",,,," Trigger="0" Filter="0.1 V" Trigger="0" AutoSC="4" Tracks="1" HideCh="false,true,true,true," VolPos="-1.63,-1.63,-1.63,-1.63," />
+<item itemtype="Oscope" CircId="Oscope-10" mainComp="false" ShowProp="Basic_X" Show_id="false" Show_Val="true" Pos="788,460" rotation="0" hflip="1" vflip="1" label="Oscope-10" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="200 Pixels" Basic_Y="135 Pixels" BufferSize="600000 Samples" TimDiv="250000000" TimPos="221971208,0,0,0," VolDiv="1,1,1,1," Tunnels=",,,," Trigger="0" Filter="0.1 V" Trigger="0" AutoSC="4" Tracks="1" HideCh="false,true,true,true," VolPos="-1.63,-1.63,-1.63,-1.63," />
+
+<item itemtype="TextComponent" CircId="TextComponent-39" mainComp="false" Show_id="false" Show_Val="false" Pos="380,352" rotation="0" hflip="1" vflip="1" label="TextComponent-39" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Margin="5 _Pixels" Border="1 _Pixels" Opacity="1" Font="Helvetica [Cronyx]" Font_Size="10 _Pixels" Fixed_Width="false" Text="Example is halved (speed &#x3D 50%)" />
 
 <item itemtype="Node" CircId="Node-11" mainComp="false" Pos="580,412" />
 

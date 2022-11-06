@@ -1,0 +1,43 @@
+<circuit version="trunk" rev="1365" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Subcircuit" CircId="Uno-2" mainComp="false" Show_id="true" Show_Val="false" Pos="-408,-156" rotation="0" hflip="1" vflip="1" idLabPos="7,-26" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps itemtype="MCU" CircId="2_mega328-109" mainComp="true" Show_id="false" Show_Val="false" Pos="20,20" rotation="0" hflip="1" vflip="1" label="2_mega328-109" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../target/avr-atmega328p/debug/03_pot_light.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="true" Wdt_enabled="false" SerialMon="-1" />
+</item>
+
+<item itemtype="Potentiometer" CircId="Potentiometer-3" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-180,-124" rotation="0" hflip="1" vflip="1" label="Potentiometer-3" idLabPos="-16,-40" labelrot="0" valLabPos="15,-20" valLabRot="0" Resistance="10 kΩ" Value_Ohm="500 Ω" />
+
+<item itemtype="Led" CircId="Led-6" mainComp="false" Show_id="false" Show_Val="false" Pos="-180,-172" rotation="0" hflip="1" vflip="1" label="Led-6" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="0.02 A" Resistance="0.6 Ω" />
+
+<item itemtype="Resistor" CircId="Resistor-21" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-224,-172" rotation="0" hflip="1" vflip="1" label="Resistor-21" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="220 Ω" />
+
+<item itemtype="Voltimeter" CircId="Voltimeter-34" mainComp="false" Show_id="false" Show_Val="false" Pos="-164,-68" rotation="0" hflip="1" vflip="1" label="Voltimeter-34" idLabPos="-24,-40" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Node" CircId="Node-32" mainComp="false" Pos="-124,-124" />
+
+<item itemtype="Node" CircId="Node-43" mainComp="false" Pos="-200,-100" />
+
+<item itemtype="Node" CircId="Node-46" mainComp="false" Pos="-124,-52" />
+
+<item itemtype="Connector" uid="connector-35" startpinid="Resistor-21-rPin" endpinid="Led-6-lPin" pointList="-208,-172,-196,-172" />
+
+<item itemtype="Connector" uid="connector-36" startpinid="Resistor-21-lPin" endpinid="Uno-2-9" pointList="-240,-172,-428,-172,-428,-60,-400,-60" />
+
+<item itemtype="Connector" uid="connector-37" startpinid="Uno-2-A0" endpinid="Node-43-0" pointList="-256,-100,-200,-100" />
+
+<item itemtype="Connector" uid="connector-38" startpinid="Uno-2-GND2" endpinid="Node-46-0" pointList="-400,-20,-416,-20,-416,76,-124,76,-124,-52" />
+
+<item itemtype="Connector" uid="connector-39" startpinid="Uno-2-5V0" endpinid="Potentiometer-3-PinA" pointList="-256,-60,-212,-60,-212,-124,-196,-124" />
+
+<item itemtype="Connector" uid="connector-40" startpinid="Potentiometer-3-PinB" endpinid="Node-32-1" pointList="-164,-124,-124,-124" />
+
+<item itemtype="Connector" uid="connector-41" startpinid="Node-32-2" endpinid="Led-6-rPin" pointList="-124,-124,-124,-172,-164,-172" />
+
+<item itemtype="Connector" uid="Connector-42" startpinid="Voltimeter-34-lPin" endpinid="Node-43-1" pointList="-172,-52,-200,-52,-200,-100" />
+
+<item itemtype="Connector" uid="Connector-44" startpinid="Node-43-2" endpinid="Potentiometer-3-PinM" pointList="-200,-100,-180,-100,-180,-108" />
+
+<item itemtype="Connector" uid="Connector-45" startpinid="Voltimeter-34-rPin" endpinid="Node-46-1" pointList="-156,-52,-124,-52" />
+
+<item itemtype="Connector" uid="Connector-47" startpinid="Node-46-2" endpinid="Node-32-0" pointList="-124,-52,-124,-124" />
+
+</circuit>

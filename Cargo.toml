@@ -78,6 +78,13 @@ path = "src/14_shift_register.rs"
 test = false
 bench = false
 
+[[bin]]
+name = "15_display"
+path = "src/15_display.rs"
+test = false
+bench = false
+
+
 [dependencies]
 panic-halt = "0.2.0"
 ufmt = "0.1.0"

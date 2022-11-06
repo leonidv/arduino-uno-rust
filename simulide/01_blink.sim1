@@ -1,0 +1,21 @@
+<circuit version="trunk" rev="1365" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Resistor" CircId="Resistor-16" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="160,-272" rotation="90" hflip="1" vflip="1" label="Resistor-16" idLabPos="-12,-20" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="220 Ω" />
+
+<item itemtype="Subcircuit" CircId="Uno-1" mainComp="false" Show_id="false" Show_Val="false" Pos="-52,-320" rotation="0" hflip="1" vflip="1" label="Arduino Uno" idLabPos="48,-18" labelrot="0" valLabPos="0,0" valLabRot="0" Logic_Symbol="false">
+<mainCompProps itemtype="MCU" CircId="1_mega328-109" mainComp="true" Show_id="false" Show_Val="false" Pos="20,20" rotation="0" hflip="1" vflip="1" label="1_mega328-109" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../target/avr-atmega328p/debug/01_blink.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="true" Wdt_enabled="false" SerialMon="-1" />
+</item>
+
+<item itemtype="Led" CircId="Led-2" mainComp="false" Show_id="false" Show_Val="false" Pos="140,-240" rotation="-540" hflip="1" vflip="1" label="Led-2" idLabPos="-16,-24" labelrot="0" valLabPos="0,0" valLabRot="0" Color="Green" Grounded="false" Threshold="2.4 V" MaxCurrent="0.01 A" Resistance="0.6 Ω" />
+
+<item itemtype="Amperimeter" CircId="Amperimeter-11" mainComp="false" Show_id="false" Show_Val="false" Pos="136,-356" rotation="0" hflip="1" vflip="1" label="Amperimeter-11" idLabPos="-24,-40" labelrot="0" valLabPos="0,0" valLabRot="0" />
+
+<item itemtype="Connector" uid="connector-17" startpinid="Uno-1-13" endpinid="Amperimeter-11-lPin" pointList="-44,-192,-68,-192,-68,-340,128,-340" />
+
+<item itemtype="Connector" uid="connector-18" startpinid="Amperimeter-11-rPin" endpinid="Resistor-16-lPin" pointList="144,-340,160,-340,160,-288" />
+
+<item itemtype="Connector" uid="connector-19" startpinid="Uno-1-GND0" endpinid="Led-2-rPin" pointList="100,-240,124,-240" />
+
+<item itemtype="Connector" uid="connector-20" startpinid="Resistor-16-rPin" endpinid="Led-2-lPin" pointList="160,-256,160,-240,156,-240" />
+
+</circuit>

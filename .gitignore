@@ -1,5 +1,7 @@
 debug/
 target/
+media/
 Cargo.lock
 
 **/*.rs.bk
+*.code-workspace
