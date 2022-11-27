@@ -1,0 +1,23 @@
+<circuit version="" rev="1383" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Hd44780" CircId="Hd44780-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-324,-108" rotation="0" hflip="1" vflip="1" label="MT-16S2H" idLabPos="70,-82" labelrot="0" valLabPos="-16,20" valLabRot="0" Rows="2 _Rows" Cols="16 _Columns" />
+
+<item itemtype="Subcircuit" CircId="Uno-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-88,-100" rotation="0" hflip="1" vflip="1" label="Uno-2" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps itemtype="MCU" CircId="2_mega328-109" mainComp="true" Show_id="false" Show_Val="false" Pos="20,20" rotation="0" hflip="1" vflip="1" label="2_mega328-109" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../target/avr-atmega328p/debug/15_display.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="true" Wdt_enabled="false" SerialMon="-1" />
+</item>
+
+<item itemtype="Connector" uid="Connector-3" startpinid="Hd44780-1-dataPin7" endpinid="Uno-2-4" pointList="-228,-100,-228,-52,-80,-52" />
+
+<item itemtype="Connector" uid="Connector-4" startpinid="Hd44780-1-dataPin6" endpinid="Uno-2-5" pointList="-236,-100,-236,-44,-80,-44" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="Hd44780-1-dataPin5" endpinid="Uno-2-6" pointList="-244,-100,-244,-36,-80,-36" />
+
+<item itemtype="Connector" uid="Connector-6" startpinid="Hd44780-1-dataPin4" endpinid="Uno-2-7" pointList="-252,-100,-252,-28,-80,-28" />
+
+<item itemtype="Connector" uid="Connector-7" startpinid="Hd44780-1-PinEn" endpinid="Uno-2-9" pointList="-292,-100,-292,-4,-80,-4" />
+
+<item itemtype="Connector" uid="Connector-8" startpinid="Hd44780-1-PinRW" endpinid="Uno-2-11" pointList="-300,-100,-300,12,-80,12" />
+
+<item itemtype="Connector" uid="Connector-15" startpinid="Hd44780-1-PinRS" endpinid="Uno-2-12" pointList="-308,-100,-308,20,-80,20" />
+
+</circuit>

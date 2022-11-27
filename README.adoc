@@ -35,28 +35,29 @@ CAUTION: Some projects has simulated in slower mode. I did it for more clarity.
 
 ## Examples description
 
-[cols="1,2,2a,2a"]
+[cols="4h,4,8a,8a,0"]
 |===
-| Example  | Description | AVR (or Rust) techniques | Arduino functions 
+| Example  | Description | AVR (or Rust) techniques | Arduino functions | SimulIDE
 
 | 01_blink 
 | Blinking led - Hello world in the Arduino.  
 | * Toggle led 
   * delay milliseconds 
-|  * delay
-   * digitalWrite
-
+|  `delay` +
+   `digitalWrite`
+| yes
 
 | 02_blink_fade 
 | Led with different brightness 
 | Fast PWM mode 
-| * analogWrite
-
+| `analogWrite`
+| yes
 
 | 03_pot_light 
 | LED with controlled by pot brightness
 | ADC, using pot
-| * analogRead
+| `analogRead`
+| yes
 
 | 04_buzzer
 | Buzzer plays musical notes
@@ -64,49 +65,69 @@ CAUTION: Some projects has simulated in slower mode. I did it for more clarity.
 
   * compare match mode
   * toggle pin d9 by timer
-| * tone
+| `tone`
+| yes
 
 | 05_night_light
 | LED on/off controlled by pot and photoconductive cell
 | ADC, using pot and photoconductive
-| * analogRead
+| `analogRead`
+| yes
 
 | 06_pulsar_bar
 | Smoothly change brighntess of LED bar
-| Fast-Mode PWM, good comments
-| * analogWrite
-  * millis
-
+| Fast-Mode PWM with a deep description.
+| `analogWrite` +
+  `millis`
+| yes
 
 | 07_running_bar
 | Sequentially on/off leds in a bar
-| AVR-Rust specific - use pins in array.
-| * digitalWrite
+| * AVR-Rust specific - use pins in array. 
+  * Working with UART
+| `digitalWrite`
+| yes
 
 | 09_mixer
 | Changes speed of motor by buttons
 | pull-up pins
-| * pinMode PULLUP
-  * digitalRead
-  * digitalWrite
+| `pinMode PULLUP` +
+  `digitalRead` +
+  `digitalWrite`
+| yes
 
 | 10_led_toggle
 | On/off led by button
 | Nothing new compare to 09_mixer
 | 
+| no
 
 | 11_inc_dec_light
 | Change brightness of led with 2 buttons
 | External Interrupts (INT0, INT1) 
-  
-Issue with Fast PWM
-| * attachInterrupt
+  Issue with Fast PWM  
+| `attachInterrupt`
+| no
 
 | 13_seven_segment_counter
 | Change digit from 0 to 9 per seconds on 7 segments counter.
 | struct as indicator's model
 |
+| no
 
 | 14_shift_register.rs
+| Like 13, but uses 8-bit serial to parallel shift register 74HC595
+| SPI
+| `shiftOut`
+| yes + KiCAD scheme
+
+| 15_display
+| Work with LCD 16 symbols 2 row display (HD44780). 
+
+ Example shows an implementation of
+  all commands from datasheet.
+| Modeling device with `struct` and `impl` (like OOP)
+| Implements library `LiquidCrystal`
+| Yes
 
 |===

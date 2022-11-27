@@ -43,7 +43,7 @@ test = false
 bench = false
 
 [[bin]]
-name = "08_running_bar"
+name = "07_running_bar"
 path = "src/07_running_bar.rs"
 test = false
 bench = false
