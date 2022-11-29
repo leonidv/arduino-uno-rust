@@ -11,7 +11,7 @@ fn main() -> ! {
 
     let mut led_pin = pins.d13.into_output();
     led_pin.set_low();
-    let mut btn_pin = pins.d3.into_pull_up_input();
+    let btn_pin = pins.d3.into_pull_up_input();
 
     let mut btn_was_pressed = false;
     loop {

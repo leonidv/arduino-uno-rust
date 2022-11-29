@@ -100,7 +100,7 @@ CAUTION: Some projects has simulated in slower mode. I did it for more clarity.
 | On/off led by button
 | Nothing new compare to 09_mixer
 | 
-| no
+| yes (press button to see rattle on logic analyzer)
 
 | 11_inc_dec_light
 | Change brightness of led with 2 buttons
