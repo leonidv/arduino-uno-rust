@@ -107,13 +107,13 @@ CAUTION: Some projects has simulated in slower mode. I did it for more clarity.
 | External Interrupts (INT0, INT1) 
   Issue with Fast PWM  
 | `attachInterrupt`
-| no
+| yes
 
 | 13_seven_segment_counter
 | Change digit from 0 to 9 per seconds on 7 segments counter.
 | struct as indicator's model
 |
-| no
+| yes
 
 | 14_shift_register.rs
 | Like 13, but uses 8-bit serial to parallel shift register 74HC595

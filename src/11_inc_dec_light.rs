@@ -1,23 +1,33 @@
 #![no_std]
 #![no_main]
-#![feature(abi_avr_interrupt)]
+#![feature(abi_avr_interrupt)] // !!! You MUST enable this feature !!! ///
+use panic_halt as _;
 
 use core::sync::atomic::{AtomicU8, Ordering};
-use avr_device::asm::sleep;
-use panic_halt as _;
 
 enum Operation { INC, DEC }
 
-static BRIGHTNESS: AtomicU8 = AtomicU8::new(0);
-
 static CHANGE_BY: u8 = 51; // 255 = 5*3*17
 
+// For safety working in several threads. 
+static BRIGHTNESS: AtomicU8 = AtomicU8::new(CHANGE_BY*3);
 
+
+
+
+/**
+ * Handler for INT0 - External interrupt request 0. 
+ * INT0 attached to the digital pin 2
+ */
 #[avr_device::interrupt(atmega328p)]
 fn INT0() {
     change_brightness(CHANGE_BY, Operation::INC);
 }
 
+/**
+ * Handler for INT1 - External interrupt request 1.
+ * INT1 attached to the digital pin 3
+ */
 #[avr_device::interrupt(atmega328p)]
 fn INT1() {
     change_brightness(CHANGE_BY, Operation::DEC);
@@ -43,6 +53,7 @@ fn main() -> ! {
     let tc1 = dp.TC1;
 
     // Enable correct phase PWM to avoid spikes on 0 values. See readme for more information.
+    // PWM on the D9 pin.
     tc1.tccr1a.write(|w| w
         .wgm1().bits(0b01)
         .com1a().match_clear()
@@ -57,19 +68,24 @@ fn main() -> ! {
 
     //External interrupts initialization
     let exint = dp.EXINT;
+    // EICRA - external interrupt control register A, see 12.2 Registry Description (p. 54)
+    // ISC - interrupt sense control, 0b11 - the rising edge of INT1 generates an interrupt request.
+    // In other word, when singal changed from LOW to HIGH on d2, will be called INT0 handler
     exint.eicra.modify(|_, w| w.isc0().bits(0b11));
     exint.eimsk.modify(|_, w| w.int0().set_bit());
-    //
+    // same settings for INT1
     exint.eicra.modify(|_, w| w.isc1().bits(0b11));
     exint.eimsk.modify(|_, w| w.int1().set_bit());
 
     unsafe {
+        // call `sei` assembly command (see p.127 of AVR Instruction set manual).
+        // Sets the Global Interrupt Enable (I) bit in SREG (Status Register). 
+        // The instruction following SEI will be executed before any pending interrupts
         avr_device::interrupt::enable()
     };
 
     loop {
         let lightness = u16::from(BRIGHTNESS.load(Ordering::SeqCst));
-        //ufmt::uwriteln!(&mut serial, "lightness = {}",lightness);
         tc1.ocr1a.write(|w| unsafe { w.bits(lightness) });
     }
 }

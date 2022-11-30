@@ -7,10 +7,6 @@ use arduino_hal::port::mode::Output;
 use arduino_hal::port::Pin;
 use core::cell;
 use arduino_hal::delay_ms;
-use avr_device::atmega328p::TC0;
-use embedded_hal::digital::v2::OutputPin;
-
-use panic_halt as _;
 
 #[arduino_hal::entry]
 fn main() -> ! {
@@ -52,8 +48,6 @@ fn main() -> ! {
 /*
  See Write your own Arduino millis() in Rust by rahix https://blog.rahix.de/005-avr-hal-millis/.
  */
-
-
 const PRESCALER: u32 = 1024;
 const TIMER_COUNTS: u32 = 125;
 
