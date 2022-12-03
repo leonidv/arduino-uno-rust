@@ -17,7 +17,15 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+ifdef::env-github[]
+<p align="center">
+<img src="media/arudino-rust-logo.png" alt="Logo" width="400px" >
+</p>
+endif::[]
+
+ifndef::env-github[]
 image::arudino-rust-logo.png[Logo,400,align="center"]
+endif::[]
 
 # Repository description
 
