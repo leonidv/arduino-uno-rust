@@ -35,7 +35,7 @@ endif::[]
 
 # Repository description
 
-TIP: I recommend read link:raw/master/README.pdf[PDF version] of this readme with better formatting.
+TIP: link:https://github.com/leonidv/arduino-uno-rust/raw/master/README.pdf[PDF version] of this readme has a better formatting.
 
 Repository contains implementation of classical Arduino examples in the Rust programming language. It uses  https://github.com/Rahix/avr-hal/[avr-hal] low-level API and and some examples work  directly with MCU registers. Comments often contain references to https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf[ATMega328p Datasheet].  Examples cover themes:
 
