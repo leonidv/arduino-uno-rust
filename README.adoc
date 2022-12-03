@@ -18,9 +18,15 @@ ifdef::env-github[]
 endif::[]
 
 ifdef::env-github[]
+
+++++
+
 <p align="center">
 <img src="media/arudino-rust-logo.png" alt="Logo" width="400px" >
 </p>
+
+++++
+
 endif::[]
 
 ifndef::env-github[]
